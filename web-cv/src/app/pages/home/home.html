@@ -3,8 +3,14 @@
     <h1>Bienvenido</h1>
     <button mat-raised-button color="accent" class="modern-btn" 
             [class.animate-text]="animateButton"
-            (click)="triggerButtonAnimation()">
+            (click)="initSession()">
         Ingresar
     </button>
+
+    <div *ngIf="info">
+        <h2>Información principal:</h2>
+        <pre>{{ info | json }}</pre>
+    </div>
+
   </div>
 </div>
