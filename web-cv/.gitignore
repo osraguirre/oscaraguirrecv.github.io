@@ -10,6 +10,8 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+pnpm-debug.log*
+*.log
 
 # IDEs and editors
 .idea/
@@ -28,10 +30,14 @@ yarn-error.log
 !.vscode/extensions.json
 !.vscode/mcp.json
 .history/*
+.cursor/
 
 # Miscellaneous
 /.angular/cache
 .sass-cache/
+.cache/
+.eslintcache
+/reports
 /connect.lock
 /coverage
 /libpeerconnection.log
@@ -42,3 +48,8 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Environment files (do not commit secrets)
+.env
+.env.*
+!.env.example
