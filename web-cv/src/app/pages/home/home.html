@@ -1,6 +1,8 @@
 <div class="home-container">
   <header class="top-separator">
-    <a class="brand-name" href="#">Oscar Aguirre</a>
+    <a class="brand-name" href="#">
+      {{ (profile?.name || 'Oscar') + ' ' + (profile?.lastName || 'Aguirre') }}
+    </a>
 
     <nav class="top-actions" aria-label="Navegación principal">
       <ul class="nav-list">
@@ -17,18 +19,37 @@
         <span>Tu foto</span>
       </div>
 
-      <p class="profile-name">Oscar Aguirre</p>
+      <div class="profile-identity">
+        <p class="profile-name">
+          {{ (profile?.name || 'Oscar') + ' ' + (profile?.lastName || 'Aguirre') }}
+        </p>
+        <p class="profile-role">{{ profile?.role || 'Desarrollador BackEnd' }}</p>
+        <p class="profile-location">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            fill="currentColor"
+          >
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 7.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"
+            />
+          </svg>
+          <span>{{ profile?.location || 'Nuevo Leon., Mexico' }}</span>
+        </p>
+      </div>
 
       <ul class="profile-social-list" aria-label="Redes de contacto">
         <li>
           <a
             class="social-link"
-            href="https://github.com/osraguirre"
+            [href]="contactInfo?.github || 'https://github.com/osraguirre'"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
             title="GitHub"
-            data-tooltip="github.com/osraguirre"
+            [attr.data-tooltip]="contactInfo?.github || 'github.com/osraguirre'"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -40,10 +61,10 @@
         <li>
           <a
             class="social-link"
-            href="mailto:osr122g@gmail.com"
+            [href]="'mailto:' + (contactInfo?.email || 'osr122g@gmail.com')"
             aria-label="Gmail"
             title="Gmail"
-            data-tooltip="osr122g@gmail.com"
+            [attr.data-tooltip]="contactInfo?.email || 'osr122g@gmail.com'"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -55,12 +76,12 @@
         <li>
           <a
             class="social-link"
-            href="https://www.linkedin.com/in/oscar-alberto-aguirre-gamboa/"
+            [href]="contactInfo?.linkedin || 'https://www.linkedin.com/in/oscar-alberto-aguirre-gamboa/'"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
             title="LinkedIn"
-            data-tooltip="linkedin.com/in/oscar-alberto-aguirre-gamboa"
+            [attr.data-tooltip]="contactInfo?.linkedin || 'linkedin.com/in/oscar-alberto-aguirre-gamboa'"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -72,10 +93,10 @@
         <li>
           <a
             class="social-link"
-            href="tel:+528181789173"
+            [href]="'tel:' + (contactInfo?.phoneNumber || '+528181789173')"
             aria-label="Teléfono"
             title="Teléfono"
-            data-tooltip="+52 81 8178 9173"
+            [attr.data-tooltip]="contactInfo?.phoneNumber || '+52 81 8178 9173'"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path

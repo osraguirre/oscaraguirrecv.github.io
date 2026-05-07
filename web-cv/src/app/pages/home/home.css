@@ -122,11 +122,35 @@
 .profile-name {
   margin: 0;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  letter-spacing: 0.3px;
   cursor: default;
   user-select: none;
+}
+
+.profile-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-role {
+  margin: 0;
+  color: rgba(255,255,255,0.76);
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  transform:skewX(-8deg);
+}
+
+.profile-location {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
 }
 
 .profile-social-list {
