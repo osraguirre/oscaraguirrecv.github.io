@@ -1,11 +1,26 @@
+:root {
+  color-scheme: dark;
+  color: #ffffff;
+  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  --surface-1: rgba(255, 255, 255, 0.07);
+  --surface-2: rgba(255, 255, 255, 0.12);
+  --surface-3: rgba(255, 255, 255, 0.18);
+  --border: rgba(255, 255, 255, 0.22);
+  --text-muted: rgba(255, 255, 255, 0.78);
+  --accent: #8e63ff;
+}
+
 .home-container {
-  min-height: 100vh; /* ocupa toda la pantalla */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-image: url('../../../assets/images/immersive-aesthetics-art-software-development-unveiled-stylistic-sleek-hyper-realis_983420-325843.avif');
-  background-size: cover; /* cubre toda la pantalla */
-  background-position: center; /* centrada */
-  background-repeat: no-repeat; /* sin repetirse */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #050714;
 }
 
 .top-separator {
@@ -14,9 +29,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 28px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
+  border-bottom: 1px solid var(--border);
+  background-color: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(6px);
 }
 
 .brand-name {
@@ -77,19 +92,26 @@
   }
 }
 
-.content-area {
+main.content-area {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 44px 28px;
 }
 
 .profile-card {
+  width: min(100%, 580px);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 14px;
+  gap: 18px;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.32);
+  border: 1px solid var(--surface-2);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
 }
 
 .profile-photo-circle {
@@ -100,8 +122,8 @@
   border: 3px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
   background-image:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(103, 58, 183, 0.35)),
-    url('/assets/images/profile-photo.jpg');
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(103, 58, 183, 0.35)),
+    url('/assets/images/profile-photo.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -141,7 +163,8 @@
   font-size: 1rem;
   font-weight: 600;
   font-style: italic;
-  transform:skewX(-8deg);
+  transform: skewX(-8deg);
+  user-select: none;
 }
 
 .profile-location {
@@ -151,6 +174,7 @@
   gap: 8px;
   color: rgba(255,255,255,0.9);
   font-size: 1rem;
+  user-select: none;
 }
 
 .profile-social-list {

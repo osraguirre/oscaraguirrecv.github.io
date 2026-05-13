@@ -55,4 +55,11 @@ export class HomeComponent implements OnInit {
   get contactInfo() {
     return this.profile?.contactInfo?.[0];
   }
+
+  get whatsappUrl(): string {
+    const phone = this.contactInfo?.phoneNumber;
+    if (!phone) return '';
+    const digits = phone.replace(/\D/g, '');
+    return `https://wa.me/${digits}`;
+  }
 }
